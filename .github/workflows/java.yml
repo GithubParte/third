@@ -24,5 +24,5 @@ jobs:
       working-directory: ./src/main/java/org/example
 
     - name: run java code
-      run: java -cp ./src/main/java org.example.Main
+      run: java -cp ./src/main/java org.example.Main.class
       working-directory: ./src/main/java

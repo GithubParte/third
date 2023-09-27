@@ -3,7 +3,7 @@ name: Java Build and Run
 on:
   push:
     branches:
-      -main
+      - main
 
 jobs:
   build:

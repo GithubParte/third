@@ -24,6 +24,7 @@ jobs:
       run: mvn test
       
   build:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
@@ -42,6 +43,7 @@ jobs:
   
 
   run:
+    needs: build
     runs-on: ubuntu-latest
 
     steps:

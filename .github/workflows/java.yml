@@ -23,6 +23,10 @@ jobs:
       run: javac Main.java
       working-directory: ./src/main/java/org/example
 
+    - name: Compile java code
+      run: ls
+      working-directory: ./src/main/java/org/example
+
 
     - name: run java code
       run: java Main.class

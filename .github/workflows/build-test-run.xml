@@ -1,0 +1,55 @@
+name: Java Maven Build and Test
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v3.10.0
+      with:
+        java-version: '17'
+
+    - name: Build with Maven
+      run: mvn clean package
+
+  test:
+    runs-on: ubuntu-latest
+
+     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v3.10.0
+      with:
+        java-version: '17'
+
+    - name: Run Tests
+      run: mvn test
+
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v3.10.0
+      with:
+        java-version: '17'
+
+    - name: Build with Maven
+      run: mvn clean install -DskipTests
+
+    - name: Run Project
+      run: java -jar target/Hi-1.0-SNAPSHOT.jar

@@ -29,5 +29,5 @@ jobs:
 
 
     - name: run java code
-      run: java Main.class
+      run: java Main
       working-directory: ./src/main/java/org/example

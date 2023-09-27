@@ -11,5 +11,7 @@ jobs:
 
     steps:
     - name: Printing a message
-      run: echo "Welcome to WP2 F2F"
+      run: |
+        echo "Welcome to"
+        echo "WP2 F2F"
      

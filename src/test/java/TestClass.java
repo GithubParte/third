@@ -5,6 +5,6 @@ public class TestClass {
     @Test
     public void fakeTest(){
         int sum= 3+4;
-        Assertions.assertEquals(sum, 7);
+        Assertions.assertEquals(sum, 5);
     }
 }

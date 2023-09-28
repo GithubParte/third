@@ -8,23 +8,23 @@ on:
 
 jobs:
   test:
-     runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-    # steps:
-    # - name: Checkout code
-    #   uses: actions/checkout@v4
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-    # - name: Set up Java
-    #   uses: actions/setup-java@v3.10.0
-    #   with:
-    #     distribution: 'zulu'
-    #     java-version: '17'
+    - name: Set up Java
+      uses: actions/setup-java@v3.10.0
+      with:
+        distribution: 'zulu'
+        java-version: '17'
 
-    # - name: Run Tests
-    #   run: mvn test
+    - name: Run Tests
+      run: mvn test
       
   build:
-    needs: test
+    # needs: test
     runs-on: ubuntu-latest
 
     steps:

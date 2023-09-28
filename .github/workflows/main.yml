@@ -1,5 +1,4 @@
-
-name: Java Build and Run
+name: Java Maven Build and Test
 
 on:
   push:
@@ -7,23 +6,55 @@ on:
       - main
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-    - name: checkout code
+    - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: set up java
+    - name: Set up Java
       uses: actions/setup-java@v3.10.0
       with:
         distribution: 'zulu'
         java-version: '17'
 
-    - name: Compile java code
-      run: javac Main.java
-      working-directory: ./src/main/java/org/example
+    - name: Run Tests
+      run: mvn test
+      
+  build:
+    runs-on: ubuntu-latest
 
-    - name: run java code
-      run: java org.example.Main
-      working-directory: ./src/main/java
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v3.10.0
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Build with Maven
+      run: mvn clean install -DskipTests
+
+  
+
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Java
+      uses: actions/setup-java@v3.10.0
+      with:
+        distribution: 'zulu'
+        java-version: '17'
+
+    - name: Build with Maven
+      run: mvn clean install -DskipTests
+
+    - name: Run Project
+      run: java -jar target/Hi-1.0-SNAPSHOT.jar

@@ -43,6 +43,6 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-            ghcr.io/${{ OWNER_LC }}:latest
+            ghcr.io/${{ github.OWNER_LC }}:latest
             ${{ github.repository }}:latest
 

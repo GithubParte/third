@@ -43,5 +43,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-            ghcr.io/prsparisa/mypresentation:latest
+            ghcr.io/githubparte/mypresentation:latest
 

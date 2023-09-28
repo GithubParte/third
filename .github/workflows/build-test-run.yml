@@ -64,5 +64,8 @@ jobs:
         distribution: 'zulu'
         java-version: '17'
 
+    - name: Unzip JAR artifact
+      run: unzip my-artifact.zip
+
     - name: Run Project
       run: java -jar my-artifact/Hi-1.0-SNAPSHOT.jar

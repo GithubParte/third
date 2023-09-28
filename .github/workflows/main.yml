@@ -43,5 +43,5 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: |
-            ghcr.io/wp2f2f:latest
+            ghcr.io/mypresentationforgithubaction:latest
 

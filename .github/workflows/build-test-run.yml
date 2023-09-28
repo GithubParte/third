@@ -65,4 +65,4 @@ jobs:
         java-version: '17'
 
     - name: Run Project
-      run: java -jar target/Hi-1.0-SNAPSHOT.jar
+      run: java -jar my-artifact/Hi-1.0-SNAPSHOT.jar

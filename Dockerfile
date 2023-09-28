@@ -2,7 +2,6 @@ FROM openjdk:17-jdk-alpine
 
 WORKDIR /app
 
-COPY Hi-1.0-SNAPSHOT.jar /app/
+COPY target/Hi-1.0-SNAPSHOT.jar /app/
 
-# Command to run the JAR file
 CMD ["java", "-jar", "Hi-1.0-SNAPSHOT.jar"]

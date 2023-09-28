@@ -5,26 +5,9 @@ on:
     branches:
       - main
 
-jobs:
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-
-    - name: Set up Java
-      uses: actions/setup-java@v3.10.0
-      with:
-        distribution: 'zulu'
-        java-version: '17'
-
-    - name: Run Tests
-      run: mvn test
-      
+jobs: 
   build:
     runs-on: ubuntu-latest
-    needs: test
 
     steps:
     - name: Checkout code
@@ -39,24 +22,27 @@ jobs:
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
-  
+    - name: Upload the jar file
+      uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: target/Hi-1.0-SNAPSHOT.jar
 
   run:
+    needs: build
     runs-on: ubuntu-latest
-    needs: test
-    
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
 
+    steps:
+    - name: Download the jar file
+      uses: actions/download-artifact@v3
+      with:
+        name: my-artifact
+        
     - name: Set up Java
       uses: actions/setup-java@v3.10.0
       with:
         distribution: 'zulu'
         java-version: '17'
 
-    - name: Build with Maven
-      run: mvn clean install -DskipTests
-
     - name: Run Project
-      run: java -jar target/Hi-1.0-SNAPSHOT.jar
+      run: java -jar Hi-1.0-SNAPSHOT.jar

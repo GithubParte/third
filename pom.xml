@@ -43,4 +43,11 @@
             </plugin>
         </plugins>
     </build>
+         <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>hi-test</name>
+            <url>https://maven.pkg.github.com/githubparte/third</url>
+        </repository>
+    </distributionManagement>
 </project>

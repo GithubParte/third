@@ -25,4 +25,4 @@ jobs:
         run: mvn clean install
 
       - name: Deploy to Maven repository
-        run: mvn deploy --settings .github/maven/settings.xml
+        run: mvn deploy

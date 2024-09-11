@@ -22,4 +22,7 @@ jobs:
           java-version: '21'
 
       - name: Build with Maven
-        run: mvn deploy
+        run: mvn clean install
+
+      - name: Deploy to Maven repository
+        run: mvn deploy --settings .github/maven/settings.xml

@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.githubparte</groupId>
-    <artifactId>third.hi</artifactId>
+    <groupId>com.github.Letsstop</groupId>
+    <artifactId>first.hi</artifactId>
     <version>1.0.100</version>
 
     <properties>
@@ -53,7 +53,7 @@
         <repository>
             <id>github</id>
             <name>hi-test</name>
-            <url>https://maven.pkg.github.com/githubparte/third</url>
+            <url>https://maven.pkg.github.com/Letsstop/first</url>
         </repository>
     </distributionManagement>
 </project>

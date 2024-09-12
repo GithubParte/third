@@ -6,7 +6,7 @@
 
     <groupId>com.github.githubparte</groupId>
     <artifactId>third.hi</artifactId>
-    <version>1.0.103</version>
+    <version>1.0.104</version>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
